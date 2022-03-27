@@ -20,7 +20,7 @@
                         <div class="form-group row">
                               <label for="nama" class="col-4 col-form-label">NIM</label>
                               <div class="col-8">
-                                    <input id="nama" name="nim" placeholder="NIM" type="text" class="form-control" required="required">
+                                    <input id="nim" name="nim" placeholder="NIM" type="text" class="form-control" required="required">
                               </div>
                         </div>
                         <div class="form-group row">
@@ -36,7 +36,7 @@
                         <div class="form-group row">
                               <label for="nilai_uts" class="col-4 col-form-label">Nilai</label>
                               <div class="col-8">
-                                    <input id="nilai_uts" name="nilai" placeholder="Nilai UTS" type="text" class="form-control" required="required">
+                                    <input id="nilai" name="nilai" placeholder="Nilai UTS" type="text" class="form-control" required="required">
                               </div>
                         </div>
                         <div class="form-group row">
@@ -49,7 +49,7 @@
             <?php
             require_once 'class_nilaimahasiswa.php';
             if ($_POST){
-                  $ns = new NilaiMahasiswa($_POST['nim'], $_POST['matkul'], $_POST['nilai']);
+                  $ns = new NilaiMahasiswa($_POST['matkul'], $_POST['nilai'], $_POST['nim']);
                   $keterangan = $ns->hitungNilai();
                   $hasil = $ns->grade($keterangan);
                   $hasil2 = $ns->predikat($keterangan);
